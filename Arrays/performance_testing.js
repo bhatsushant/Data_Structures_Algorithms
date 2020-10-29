@@ -12,4 +12,4 @@ function findNemo(arr) {
     console.log(`Call to find nemo took ${t1-t0} seconds`);
 }
 
-findNemo(array);
+findNemo(array); 
