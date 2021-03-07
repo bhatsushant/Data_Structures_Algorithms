@@ -97,3 +97,6 @@ http://statmath.wu.ac.at/courses/data-analysis/itdtHTML/node55.html
 ##### var vs let vs const –
 https://dev.to/sethusenthil/var-vs-let-vs-const-1cgc
 
+## Section 8:
+##### VisuAlgo - visualising data structures and algorithms through animation
+https://visualgo.net/en
