@@ -1,3 +1,4 @@
+// Rough examples to give an idea of Big O
 
 function compressed(boxes) {
     boxes.foreach(boxes) { // O(n)
@@ -7,7 +8,7 @@ function compressed(boxes) {
     }
 }
 
-Big O - O(n * n) = O(n ^ 2)
+// Big O - O(n * n) = O(n ^ 2)
 
 function compressed(boxes) {
     boxes.foreach(boxes) { // O(n)
@@ -19,7 +20,7 @@ function compressed(boxes) {
     }
 }
 
-Big O - O(n + n) = O(2n) = O(n)
+// Big O - O(n + n) = O(2n) = O(n)
 
 function compressed(boxes, boxes2) {
     boxes.foreach(boxes) { // O(n)
@@ -31,7 +32,7 @@ function compressed(boxes, boxes2) {
     }
 }
 
-Big O - O(a + b)
+// Big O - O(a + b)
 
 function compressed(boxes, boxes2) {
     boxes.foreach(boxes) { // O(n)
@@ -41,4 +42,4 @@ function compressed(boxes, boxes2) {
     }
 }
 
-Big O - O(a * b)
+// Big O - O(a * b)
