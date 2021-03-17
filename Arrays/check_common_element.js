@@ -1,10 +1,45 @@
-// Check whether a common element exists in two given arrays
 
-// Brute force approach
-let findCommon = (array1, array2) => {
-    for (let i = 0; i < array1.length; i++) {
-        for (let j = 0; j < array2.length; j++) {
-            if (array1[i] === array2[j]) {
+/* Given two arrays, create a function that lets the user know whether these two arrays contain any common items.
+For example -   array1 = [a,b,c,d,e]
+                array2 = [f,g,h,a] should return 'true' 
+                
+                array1 = [a,b,c,d,e]
+                array2 = [f,g,h,i] should return 'false' */
+
+let containsCommonItem = (array1, array2) => {
+    if (array1 && array2) {
+        for (let i = 0; i <= array1.length - 1; i++) {
+            for (let j = 0; j <= array2.length - 1; j++) {
+                if (array1[i] === array2[j]) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+containsCommonItem(['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h', 'a']);
+
+// Output - true
+
+containsCommonItem(['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h']);
+
+// Output - false
+
+// Optimizing the solution using a map
+
+let containsCommonItem2 = (array1, array2) => {
+    if (array1 && array2) {
+        const map = {};
+        for (let i = 0; i <= array1.length; i++) {
+            if (!map[array1[i]]) {
+                map[array1[i]] = true;
+            }
+        }
+
+        for (let i = 0; i <= array2.length; i++) {
+            if (map[array2[i]]) {
                 return true;
             }
         }
@@ -12,24 +47,24 @@ let findCommon = (array1, array2) => {
     return false;
 }
 
-// Optimizing by creating a map
-let findCommon2 = (array1, array2) => {
-    let map = {};
-    for (let i = 0; i < array1.length; i++) {
-        if (!map[array1[i]]) {
-            const item = array1[i];
-            map[item] = true;
-        }
-    }
-    for (let i = 0; i < array2.length; i++) {
-        if (map[array2[i]]) {
-            return true;
-        }
-    }
-    return false;
-}
+containsCommonItem2(['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h', 'a']);
 
-// Using ES6 and built in functions
-let findCommon3 = (array1, array2) => {
+// Output - true
+
+containsCommonItem2(['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h']);
+
+// Output - false
+
+// Using ES6 and built-in methods
+
+let containsCommonItem3 = (array1, array2) => {
     return array1.some(item => array2.includes(item));
 }
+
+containsCommonItem3(['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h', 'a']);
+
+// Output - true
+
+containsCommonItem3(['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h']);
+
+// Output - false
