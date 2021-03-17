@@ -3,11 +3,11 @@
 function mergeSortedArrays(array1, array2) {
     const mergedArray = [];
 
-    if(!array1 || array1.length === 0) {
-        return array1;
-    }
-    if(!array2 || array2.length === 0) {
+    if (!array1 || array1.length === 0) {
         return array2;
+    }
+    if (!array2 || array2.length === 0) {
+        return array1;
     }
 
     let array1Item = array1[0];
@@ -16,8 +16,8 @@ function mergeSortedArrays(array1, array2) {
     let i = 1;
     let j = 1;
 
-    while(array1Item || array2Item) {
-        if(!array2Item || array1Item < array2Item) {
+    while (array1Item || array2Item) {
+        if (!array2Item || array1Item < array2Item) {
             mergedArray.push(array1Item);
             array1Item = array1[i];
             i++;
@@ -30,7 +30,7 @@ function mergeSortedArrays(array1, array2) {
     return mergedArray;
 }
 
-mergeSortedArrays([3,4,5],[2,6,8]);
+mergeSortedArrays([3, 4, 5], [2, 6, 8]);
 // Output : [2,3,4,5,6,8]
 
 // This method only works if the input arrays are sorted individually by default
