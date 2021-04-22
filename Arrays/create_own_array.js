@@ -2,12 +2,12 @@
 
 class MyArray {
     constructor() {
-      this.length = 0;
-      this.data = {};
+        this.length = 0;
+        this.data = {};
     }
-  
+
     get(index) {
-      return this.data[index];
+        return this.data[index];
     }
 
     push(item) {
@@ -18,7 +18,7 @@ class MyArray {
 
     pop() {
         const lastItem = this.data[this.length - 1];
-        delete this.data[this.length-1];
+        delete this.data[this.length - 1];
         this.length--;
         return lastItem;
     }
@@ -29,17 +29,20 @@ class MyArray {
     }
 
     shiftItems(index) {
-        for(let i = index; i < this.length - 1; i++) {
-            this.data[i] = this.data[i+1];
+        if (index > this.length - 1) {
+            return undefined;
         }
-        delete this.data[this.length-1];
+        for (let i = index; i < this.length - 1; i++) {
+            this.data[i] = this.data[i + 1];
+        }
+        delete this.data[this.length - 1];
         this.length--;
     }
-  }
-  
-  const newArray = new MyArray();
-  console.log(newArray.push('Hi'));
-  console.log(newArray.push("!"));
-  console.log(newArray.push("!"));
-  console.log(newArray.pop());
-  newArray.delete(1);
+}
+
+const newArray = new MyArray();
+console.log(newArray.push('Hi'));
+console.log(newArray.push("!"));
+console.log(newArray.push("!"));
+console.log(newArray.pop());
+newArray.delete(1);
